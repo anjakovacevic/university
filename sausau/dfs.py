@@ -1,5 +1,27 @@
-import math
+# Sa casa
+graph = {
+    5: [3, 7],
+    3: [2, 4],
+    7: [8],
+    4: [8],
+    2: [],
+    8: [],
+}
 
+def dfs_cas(graph, V, visited):  
+    if V not in visited:
+        visited.append(V)
+        for sused in graph[V]:
+            dfs_cas(graph, sused, visited)
+    return visited
+    
+visited=[]
+print(dfs_cas(graph, 5, visited))
+
+
+
+
+# NIJE SA CASA
 class Cvor:
     def __init__(self, color, d, pred):
         self.color = color

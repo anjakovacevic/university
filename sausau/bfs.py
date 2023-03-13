@@ -1,5 +1,36 @@
 import math
 
+# sa casa
+graph = {
+    5: [3, 7],
+    3: [2, 4],
+    7: [8],
+    4: [8],
+    2: [],
+    8: [],
+}
+
+def bfs_cas(graph, V):
+    visited = []
+    unvisited = []
+    visited.append(V)
+    unvisited.append(V)
+
+    while unvisited:
+        m=unvisited.pop(0)    # FIFO
+        for sused in graph[m]:
+            if sused not in visited:
+                unvisited.append(sused)
+                visited.append(sused)
+    return visited
+            
+print(bfs_cas(graph, 5))
+
+
+
+
+# NIJE sa casa
+
 class Cvor:
     def __init__(self, color, d, pred):
         self.color = color
@@ -65,13 +96,13 @@ def getPath(G, idStart, idEnd):
     path.insert(0, idStart)
     return path
 
-# Prvi nacin
+# Prvi nacin poziva
 
 # n = 5
 # edges = [(0, 1), (0, 2), (1, 3), (2, 3), (3, 4), (2, 4)]
 # adj_matrix = AdjMatrix(n, edges)
 
-# Drugi nacin
+# Drugi nacin poziva
 
 adj_matrix = [[0, 0, 1, 0, 0], 
               [1, 0, 0, 1, 0], 
