@@ -1,4 +1,6 @@
 # Pronalazak najkraceg puta - tezinski grafovi
+# Dijkstra i Bellman Ford
+
 import math
 
 graph = {
