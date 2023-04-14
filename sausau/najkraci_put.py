@@ -49,7 +49,7 @@ def dijkstra(graph, V):
         put.reverse()
         print(cvor, ":", "->".join(put))
 
-dijkstra(graph, 'A')
+#dijkstra(graph, 'A')
 
 
 graph2 = {
@@ -61,7 +61,7 @@ graph2 = {
     'F': [],
 }
 
-# Radi i sad negativnim tezinama
+# Radi i sa negativnim tezinama
 def bellman_ford(graph, V):
     r = {}    # distance
     prethodni = {}

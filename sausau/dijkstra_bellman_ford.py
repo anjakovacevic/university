@@ -36,11 +36,11 @@ def dijkstra(graph, V):
                 r[sused]=tezina+r[min_cvor]
         unvisited.pop(min_cvor)
 
-    print("Min udaljenost je: ", r)
+    print("Min udaljenost svakog cvora od cvora {} je: ".format(V), r)
     # for cvor in r:
     #     print("{0}/t/t{1}", format[cvor, r[cvor]])
 
-#dijkstra(graph, 'A')
+dijkstra(graph, 'A')
 
 
 # Bellman Ford radi i sa negativnim tezinama
@@ -61,6 +61,6 @@ def bellman_ford(graph, V):
                     print("Nemoguce naci najmanju putanju - postoji nemagtivna kruzna putanja")       
                     return -1
 
-    print("Min udaljenost je: ", r)
+    print("Min udaljenost svakog cvora od cvora {} je: ".format(V), r)
 
 bellman_ford(graph2, 'A')

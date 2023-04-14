@@ -1,3 +1,5 @@
+# sad cvorovi nisu indeksi nego konkretne vrednosti
+
 class Graph:
     def __init__(self):
         self.graph = {}
