@@ -44,8 +44,8 @@ niz1 = [ 1, 2, 3, 4]
 # print(prvi(niz1))
 # print(prvi([0, 1, 2, 3, 4, 5, 7]))
 
-print(prviZadatak(niz1))
-print(prviZadatak([0, 1, 2, 3, 4, 5, 7]))
+#print(prviZadatak(niz1))
+#print(prviZadatak([0, 1, 2, 3, 4, 5, 7]))
 
 def drugiZadatak(niz):
     donjaGranica = 0
@@ -128,3 +128,67 @@ def drugi(niz, l, r):
 
 #print(peti([1, 2, 5, 20, 40]))
 #print(cetvrti([3, 2, 5, 12, 4, 78, 55, 90, 32, 123, 63, 78, 24, 1, -8]))
+
+
+
+# Find the first or last occurrence of a given number in a sorted array
+# znaci ako se neki element ponavlja vise puta, vratiti posl put
+
+def pronadji_prvi(niz, num):
+    donja = 0
+    gornja = len(niz)-1
+    indeks = -1
+    while donja<=gornja :
+        sredina = (donja+gornja) // 2
+        if num == niz[sredina]:
+            indeks = sredina
+            gornja = sredina-1
+        elif num < niz[sredina]:
+            gornja = sredina - 1
+        else:
+            donja = sredina + 1
+    return indeks
+
+def pronadji_poslednji(niz, num):
+    donja = 0
+    gornja = len(niz)-1
+    indeks = -1
+    while donja<=gornja :
+        sredina = (donja+gornja) // 2
+        if num == niz[sredina]:
+            indeks = sredina
+            donja = sredina+1
+        elif num < niz[sredina]:
+            gornja = sredina - 1
+        else:
+            donja = sredina + 1
+    return indeks
+
+nums = [1, 2, 3, 4, 4, 4, 6, 7, 8, ]
+prvi1 = pronadji_prvi(nums, 5)
+poslednji = pronadji_poslednji(nums, 5)
+#print(f'Prvi je na indeksu {prvi1}, a poslednji na {poslednji}.')
+
+# Find the frequency of each element in a sorted array containing duplicates
+# Rekurzivna binarna pretraga
+def frekvencija(niz, donja, gornja, brojac):
+    if donja > gornja:
+        return 
+    if niz[donja]==niz[gornja]:
+        broj = brojac.get(niz[donja])
+        if broj is None :
+            broj = 0
+        brojac[niz[donja]] = broj + (gornja - donja + 1)
+        return
+    sredina = (donja + gornja) // 2
+    frekvencija(niz, donja, sredina, brojac)
+    frekvencija(niz, sredina+1, gornja, brojac)
+
+nums = [2, 2, 2, 4, 4, 4, 5, 5, 6, 8, 8, 9]
+brojac = {}
+frekvencija(nums, 0, len(nums)-1, brojac)
+print(brojac)
+
+
+
+

@@ -18,7 +18,7 @@ niz2=[1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19]
 niz3=[1, 2, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 niz4=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 20]
 niz5=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 40]
-print("Paran broj ubacen u niz je", prviZadatak(niz5))
+print("Paran broj ubacen u niz je", prviZadatak(niz3))
 print(" ")
 
 # Drugi zadatak
